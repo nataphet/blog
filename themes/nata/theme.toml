@@ -1,0 +1,21 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Nata"
+license = "MIT"
+licenselink = "https://github.com/nataphet/nata/blob/master/LICENSE"
+description = "Belejar menjadi manusia...ini adalah blog pribadi sebagai media"
+homepage = "http://nataphet.xyz/"
+tags = ["android","linux","oprek","tutorial"]
+features = ["about"]
+min_version = "0.41"
+
+[author]
+  name = "Nata Phet"
+  homepage = "nataphet.xyz"
+
+# If porting an existing theme
+[original]
+  name = "Nataphet"
+  homepage = ""
+  repo = "nataphet.github.io"

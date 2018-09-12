@@ -1,0 +1,40 @@
+<article class="card-post my-5">
+    <div class="container">
+        <div class="row">
+
+            {{ $paginator := .Paginate (where .Data.Pages "Type" "post") 6 }}
+            {{ range $paginator.Pages }}
+                 <div class="col-md-6 col-lg-4 mb-4 d-flex">
+                    <div class="card card-shadow">
+                        
+                        <!-- bagian gambar thumbnail-->
+                       <a href="{{ .RelPermalink }}">
+                        {{ with .Params.thumbnail }}
+                <div class="post-img">
+                    <img class="card-img-top lazyload" alt="" data-src="{{ . | absURL }}">
+                </div>
+                {{ end }}
+                        
+                        <!-- judul artikel -->
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a class="text-dark" href="{{ .RelPermalink }}">{{ .Title }}</a>
+                            </h5>
+                        </div>
+
+                    </div>
+
+                </div>
+            {{ end }}
+        </div>
+    
+        <!-- nomor Halaman -->
+        <div class="row">
+            <div class="col-12 mt-4">
+            {{ partial "pagination.html" . }}
+            </div>
+        </div>
+        <!-- end paging -->
+
+    </div>
+</article>

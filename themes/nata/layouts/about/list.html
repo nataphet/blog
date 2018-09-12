@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{ partial "head.html" . }}
+    </head>
+
+    <body class="bg-light" cz-shortcut-listen="true">
+       {{ partial "nav.html" . }}   
+
+        {{ if .Site.Params.about.enable }}
+{{ "<!-- About Section Start -->" | safeHTML }}
+<section id="about">
+    <div id="col-12 p-card--highlighted">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
+                    {{ with .Site.Params.about.title }}<h2>{{ . }}</h2>{{ end }}
+                    {{ with .Site.Params.about.content }}<p>{{ . | safeHTML }}</p>{{ end }}
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
+                    {{ with .Site.Params.about.image }}<img src="{{ . | absURL }}" alt="about-image" class="img-fluid">{{ end }}
+                </div>
+            </div>
+        </div>
+    </div></div>
+</section>
+{{ "<!-- About Section End -->" | safeHTML }}
+{{ end }}
+
+        {{ partial "footer.html" . }}
+        {{ partial "js-init.html" . }}
+    </body>
+</html>

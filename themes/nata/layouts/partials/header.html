@@ -1,0 +1,21 @@
+<header>
+    <div class="jumbotron jumbotron-fluid bg-nat m-0">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                     <h2 class="text-dark">{{ .Title }}</h2>
+                    <ol class="breadcrumb text-left" style="padding-left: 0; padding-bottom: 0">
+                        <li class="list-inline-item">
+                            <a style="text-decoration: none;"href="{{ .Site.BaseURL }}">
+                                <i class="ion-ios-home"></i>
+                                Home &nbsp;/&nbsp;
+                            </a>
+                        </li>
+                        <li class="active list-inline-item">{{ .Title }}</li>
+                    </ol>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
